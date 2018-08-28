@@ -23,8 +23,9 @@ public abstract class ContactDatabase extends RoomDatabase {
             synchronized (ContactDatabase.class) {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                            ContactDatabase.class, "contactDB.db")
-                            .addCallback(sContactDatabaseCallback)
+                            ContactDatabase.class, "contact_database.db")
+                            .fallbackToDestructiveMigration()
+                            .addCallback(sRoomDatabaseCallback)
                             .build();
                 }
             }
@@ -32,26 +33,25 @@ public abstract class ContactDatabase extends RoomDatabase {
         return INSTANCE;
     }
 
-    @Override
-    protected SupportSQLiteOpenHelper createOpenHelper(DatabaseConfiguration config) {
-        return null;
-    }
+    /**
+     * Override the onOpen method to populate the database.
+     * For this sample, we clear the database every time it is created or opened.
+     */
+    private static RoomDatabase.Callback sRoomDatabaseCallback = new RoomDatabase.Callback(){
 
-    @Override
-    protected InvalidationTracker createInvalidationTracker() {
-        return null;
-    }
+        @Override
+        public void onOpen (@NonNull SupportSQLiteDatabase db){
+            super.onOpen(db);
+            // If you want to keep the data through app restarts,
+            // comment out the following line.
+            new PopulateDbAsync(INSTANCE).execute();
+        }
+    };
 
-    private static ContactDatabase.Callback sContactDatabaseCallback =
-            new ContactDatabase.Callback(){
-
-                @Override
-                public void onOpen (@NonNull SupportSQLiteDatabase db){
-                    super.onOpen(db);
-                    new PopulateDbAsync(INSTANCE).execute();
-                }
-            };
-
+    /**
+     * Populate the database in the background.
+     * If you want to start with more words, just add them.
+     */
     private static class PopulateDbAsync extends AsyncTask<Void, Void, Void> {
 
         private final ContactDao cDao;
@@ -62,11 +62,11 @@ public abstract class ContactDatabase extends RoomDatabase {
 
         @Override
         protected Void doInBackground(final Void... params) {
-            cDao.deleteAll();
-            Contact word = new Contact("Firstname", "LastName" , "00000", "FirstLastName@gmail.com");
-            cDao.insert(word);
-            word = new Contact("Firstname", "LastName" , "00000", "FirstLastName@gmail.com");
-            cDao.insert(word);
+            //cDao.deleteAll();
+            /*Contact contact = new Contact("Firstname", "LastName" , "00000", "FirstLastName@gmail.com");
+            cDao.insert(contact);
+            contact = new Contact("Firstname", "LastName" , "10000", "FirstLastName@gmail.com");
+            cDao.insert(contact);*/
             return null;
         }
     }

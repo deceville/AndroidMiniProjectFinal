@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ContactDetailFragment">
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,7 +21,6 @@
 
         <TextView
             android:id="@+id/contact_name"
-            android:text="@string/contact_name_01"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -54,7 +52,6 @@
 
             <TextView
                 android:id="@+id/contact_num"
-                android:text="@string/contact_num_01"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
@@ -77,7 +74,6 @@
 
             <TextView
                 android:id="@+id/contact_email"
-                android:text="@string/contact_email_01"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"

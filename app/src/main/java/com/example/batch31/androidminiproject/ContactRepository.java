@@ -40,4 +40,22 @@ public class ContactRepository {
 
     }
 
+    public void update (Contact contact){
+        new updateAsyncTask(cContactDao).execute(contact);
+    }
+
+    private static class updateAsyncTask extends AsyncTask<Contact, Void, Void>{
+        private ContactDao cAsyncTaskDao;
+
+        updateAsyncTask(ContactDao dao){
+            cAsyncTaskDao = dao;
+        }
+
+        @Override
+        protected Void doInBackground(final Contact... params) {
+            cAsyncTaskDao.update(params[0]);
+            return null;
+        }
+
+    }
 }

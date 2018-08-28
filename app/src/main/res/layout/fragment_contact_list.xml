@@ -5,8 +5,7 @@
     android:layout_height="match_parent"
     android:id="@+id/fragment_contact_list"
     android:paddingTop="10dp"
-    android:paddingBottom="10dp"
-    tools:context=".ContactListFragment">
+    android:paddingBottom="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,7 +30,6 @@
 
             <TextView
                 android:id="@+id/contact_name"
-                android:text="@string/contact_name_01"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textSize="20sp"
@@ -39,7 +37,6 @@
 
             <TextView
                 android:id="@+id/contact_num"
-                android:text="@string/contact_num_01"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:textSize="16sp"
