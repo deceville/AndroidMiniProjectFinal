@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Address Book</string>
+
+    <string name="contact_name_01">Ben Bonifacio</string>
+    <string name="contact_name_02">Chanelle Amias</string>
+    <string name="contact_name_03">Kayleen Nacio</string>
+    <string name="contact_name_04">Matt Yolonda</string>
+    <string name="contact_name_05">Daniel Hilario</string>
+    <string name="contact_name_06">Mackenzie Renita</string>
+    <string name="contact_name_07">Eddy Mo</string>
+    <string name="contact_name_08">Shaylyn Cate</string>
+    <string name="contact_name_09">Jarred Porter</string>
+
+    <string name="contact_num_01">+984 223 919</string>
+    <string name="contact_num_02">+932 232 112</string>
+    <string name="contact_num_03">+944 881 572</string>
+    <string name="contact_num_04">+901 982 122</string>
+    <string name="contact_num_05">+933 129 883</string>
+    <string name="contact_num_06">+961 823 324</string>
+    <string name="contact_num_07">+982 723 112</string>
+    <string name="contact_num_08">+901 238 121</string>
+    <string name="contact_num_09">+911 293 399</string>
+
+    <string name="contact_email_01">benboni@gmail.com</string>
+    <string name="contact_email_02">chanelle.amias@gmail.com</string>
+    <string name="contact_email_03">kaykeynacio@gmail.com</string>
+    <string name="contact_email_04">yolomatt@gmail.com</string>
+    <string name="contact_email_05">danielhilario@gmail.com</string>
+    <string name="contact_email_06">mckenziebaby@gmail.com</string>
+    <string name="contact_email_07">eddymowow@gmail.com</string>
+    <string name="contact_email_08">shaycate@gmail.com</string>
+    <string name="contact_email_09">jarredo@gmail.com</string>
+
+    <string name="title_activity_address_book">AddressBookActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main">MainActivity</string>
+</resources>

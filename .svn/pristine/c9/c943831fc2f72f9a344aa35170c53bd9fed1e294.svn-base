@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fragment_contact_list"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    tools:context=".ContactListFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp">
+
+        <ImageView
+            android:id="@+id/contact_image"
+            android:src="@drawable/avatar1_big_2x"
+            android:layout_width="80dp"
+            android:layout_height="80dp"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:paddingStart="30dp"
+            android:paddingEnd="10dp">
+
+            <TextView
+                android:id="@+id/contact_name"
+                android:text="@string/contact_name_01"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="20sp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+            <TextView
+                android:id="@+id/contact_num"
+                android:text="@string/contact_num_01"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="16sp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

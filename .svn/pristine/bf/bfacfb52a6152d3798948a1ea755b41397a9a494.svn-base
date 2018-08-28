@@ -1,0 +1,40 @@
+package com.example.batch31.androidminiproject;
+
+import android.arch.persistence.db.SupportSQLiteOpenHelper;
+import android.arch.persistence.room.Database;
+import android.arch.persistence.room.DatabaseConfiguration;
+import android.arch.persistence.room.InvalidationTracker;
+import android.arch.persistence.room.Room;
+import android.arch.persistence.room.RoomDatabase;
+import android.content.Context;
+
+@Database(entities = {Contact.class}, version = 1)
+public abstract class ContactDatabase extends RoomDatabase {
+
+    public abstract ContactDao contactDao();
+
+    private static ContactDatabase INSTANCE;
+
+    public static ContactDatabase getDatabase(final Context context){
+        if (INSTANCE == null) {
+            synchronized (ContactDatabase.class) {
+                if (INSTANCE == null) {
+                    INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
+                            ContactDatabase.class, "contactDB.db")
+                            .build();
+                }
+            }
+        }
+        return INSTANCE;
+    }
+
+    @Override
+    protected SupportSQLiteOpenHelper createOpenHelper(DatabaseConfiguration config) {
+        return null;
+    }
+
+    @Override
+    protected InvalidationTracker createInvalidationTracker() {
+        return null;
+    }
+}
